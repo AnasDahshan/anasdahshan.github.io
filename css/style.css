@@ -1,223 +1,213 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
+@import url("http://fonts.cdnfonts.com/css/monument-extended");
 * {
-  box-sizing: border-box;
-  margin:0;
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.4;
+  margin: 0;
+  font-family: "Monument Extended", sans-serif;
+  /* background: url(https://media.giphy.com/media/3oEduMhFrYvKk4giac/giphy.gif)
+    no-repeat 50% 50%; */
+  background: #000000;
 }
 
 a {
   text-decoration: none;
 }
 
-p {
-  margin: 0.75rem 0;
-}
-
-/* Utility Classes */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 2rem;
-  overflow: hidden;
-}
-
-.text-center {
-  text-align:center;
-}
-
-.text-primary {
-  color: #93cb52;
-}
-
-.bg-light {
-  background: #f4f4f4;
-  color: #333;
-}
-
-.bg-dark {
-  background: #333;
-  color: #fff;
-}
-
-.bg-primary {
-  background: #93cb52;
-  color: #fff;
-}
-
-.l-heading {
-  font-size: 4rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.1;
-}
-
-.m-heading {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.1;
-}
-
-.lead {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-}
-
-.py-1 { padding: 1.5rem 0; }
-.py-2 { padding: 2rem 0; }
-.py-3 { padding: 3rem 0; }
-
-.p-1 { padding: 1.5rem; }
-.p-2 { padding: 2rem; }
-.p-3 { padding: 3rem; }
-
-.btn {
-  display: inline-block;
-  color: #fff;
-  background: #93cb52;
-  padding: 0.5rem 2rem;
-  border: none;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  background: #7ab436;
-}
-
-.btn-dark {
-  background: #333;
-  color: #fff;
-}
-
-.list {
-  margin: 0.5rem 0;
-  list-style: none;
-}
-
-.list li {
-  padding: 0.5rem 0;
-  border-bottom: #444 dotted 1px;
-}
-
 /* Navbar */
+
 #navbar {
   display: flex;
-  position: sticky;
-  top:0;
-  background: #333;
-  color: #fff;
+  background: black;
+  color: white;
   justify-content: space-between;
-  z-index: 1;
   padding: 1rem;
 }
 
-#navbar ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
+.logo {
+  padding-left: 3rem;
+  font-size: 1.25rem;
+  color: white;
 }
 
-#navbar ul li a {
+#navbar .nav {
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#navbar .nav {
+  padding: 0 10rem;
+}
+
+#navbar .nav a {
+  padding: 0 30px;
+}
+
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+span {
+  display: inline-block;
+  font-family: "Monument Extended";
+  font-weight: 300;
   color: #fff;
-  padding: 0.75rem;
-  margin: 0 0.25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: transform 0.1s linear;
 }
 
-#navbar ul li a:hover {
-  background: #93cb52;
-  border-radius: 5px;
-}
-
-/* Showcase */
-#showcase {
-  background: #333 url('../img/showcase.jpg') no-repeat center center/cover;
-  height: 100vh;
-  color: #fff;
-}
-
-#showcase .showcase-content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 0 2rem;
-  /* Overlay */
-  position: absolute;
-  top: 65px;
-  left:0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.4);
-}
-
-/* Section: What We Do */
-#what .items {
-  display: flex;
-  padding: 1rem;
-}
-
-#what .items .item {
-  flex: 1;
-  text-align: center;
-  padding: 1rem;
-}
-
-#what .items .item i {
-  background: #93cb52;
-  padding: 1rem;
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.3rem;
+  background-color: #fff;
   border-radius: 50%;
-  margin-bottom: 1rem;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
 }
 
-/* Section: Who We Are */
-#who {
+.hover-this:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(3);
+}
+
+@media (min-width: 900px) {
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    top: 30%;
+  }
+
+  .hover-this {
+    width: 100%;
+    padding: 20px 0;
+    display: inline-block;
+  }
+}
+
+/* Menu */
+
+.menu__item {
+  position: relative;
+  padding: 0 6vw;
+}
+
+.menu__item-link {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  -webkit-text-stroke: 1.5px #ffff;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: opacity 0.4s;
+}
+
+.menu__item-link::before {
+  all: initial;
+  font-family: sofia-pro, sans-serif;
+  counter-increment: menu;
+  position: absolute;
+  bottom: 60%;
+  left: 0;
+  pointer-events: none;
+}
+
+.menu__item-link:hover {
+  transition-duration: 0.1s;
+  opacity: 0;
+}
+
+.menu__item-img {
+  pointer-events: none;
+  position: absolute;
+  height: 50vh;
+  max-height: 400px;
+  opacity: 0;
+  left: 100%;
+  top: 50%;
+  transform: translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0);
+}
+
+.menu__item-link:hover + .menu__item-img {
+  opacity: 1;
+  transform: translate3d(calc(-100% - 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg);
+  transition: all 0.4s;
+}
+
+#menu {
+  padding: 10vh 0 25vh;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  font-size: 7vw;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #fff;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.marquee__inner {
+  width: fit-content;
   display: flex;
+  position: relative;
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.1s;
 }
 
-#who div {
-  flex: 1;
+.menu__item-link:hover ~ .marquee .marquee__inner {
+  animation-play-state: running;
+  opacity: 1;
+  transition-duration: 0.4s;
 }
 
-#who .who-img {
-  background: url('../img/people.jpg') no-repeat center center/cover;
+.menu__item-link,
+.marquee span {
+  white-space: nowrap;
+  font-size: 7vw;
+  padding: 0 1vw;
+  font-weight: 900;
+  line-height: 1.15;
 }
 
-/* Section: Clients */
-#clients .items {
-  display: flex;
+.menu__item-link,
+.marquee span {
+  font-size: 7vw;
 }
 
-#clients .items img {
-  display: block;
-  margin: auto;
-  width: 60%;
+.marquee span {
+  font-style: italic;
 }
 
-/* Section: Contact */
-#contact {
-  display: flex;
+.menu {
+  transform: rotate(-90deg);
 }
 
-#contact .map, #contact .contact-form {
-  flex: 1;
-}
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
 
-#contact .contact-form .form-group {
-  margin: 0.75rem;
-}
-
-#contact .contact-form label {
-  display: block;
-}
-
-#contact .contact-form input,
-#contact .contact-form textarea {
-  width: 100%;
-  padding: 0.5rem;
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
 }
